@@ -1,0 +1,39 @@
+{
+  "venues": [
+    {
+      "name": "Kinbaku Club London",
+      "city": "London",
+      "country": "GB",
+      "timezone": "Europe/London",
+      "tags": ["kinbaku", "shibari", "performance"]
+    },
+    {
+      "name": "Bound",
+      "city": "Berlin",
+      "country": "DE",
+      "timezone": "Europe/Berlin",
+      "tags": ["shibari", "workshop", "performance"]
+    },
+    {
+      "name": "Studio Kokoro",
+      "city": "Tokyo",
+      "country": "JP",
+      "timezone": "Asia/Tokyo",
+      "tags": ["kinbaku", "intensive", "workshop"]
+    },
+    {
+      "name": "Festival of Kinbaku",
+      "city": "Amsterdam",
+      "country": "NL",
+      "timezone": "Europe/Amsterdam",
+      "tags": ["festival", "kinbaku", "shibari"]
+    },
+    {
+      "name": "Shibari Study",
+      "city": "New York",
+      "country": "US",
+      "timezone": "America/New_York",
+      "tags": ["shibari", "workshop", "online"]
+    }
+  ]
+}

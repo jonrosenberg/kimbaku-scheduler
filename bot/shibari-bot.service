@@ -1,0 +1,17 @@
+[Unit]
+Description=Kimbaku Scheduler Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=/opt/kimbaku-scheduler
+EnvironmentFile=/opt/kimbaku-scheduler/bot/.env
+ExecStart=/usr/bin/python3 /opt/kimbaku-scheduler/bot/telegram_bot.py
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    env_file: bot/.env
+    volumes:
+      - ./data:/app/data          # persists events.db
+      - ./gcp-token:/root/.google-calendar-mcp  # persists OAuth token
+    environment:
+      - DB_PATH=/app/data/events.db
+      - PROJECT_DIR=/app
