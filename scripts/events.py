@@ -53,6 +53,22 @@ def fmt_row(row: sqlite3.Row) -> str:
         lines.append(f"  GCal ID  : {r['calendar_id']}")
     if teachers_val:
         lines.append(f"  Teachers : {teachers_val}")
+    if r.get("description"):
+        # Wrap long descriptions at 80 chars
+        desc = r["description"]
+        prefix = "  Desc     : "
+        indent = " " * len(prefix)
+        words = desc.split()
+        line, wrapped = [], []
+        for word in words:
+            if sum(len(w) + 1 for w in line) + len(word) > 80 - len(prefix if not wrapped else indent):
+                wrapped.append((prefix if not wrapped else indent) + " ".join(line))
+                line = [word]
+            else:
+                line.append(word)
+        if line:
+            wrapped.append((prefix if not wrapped else indent) + " ".join(line))
+        lines.extend(wrapped)
     if r.get("notes"):
         lines.append(f"  Notes    : {r['notes']}")
     return "\n".join(lines)

@@ -22,6 +22,7 @@ service-account*.json
 data/events.db
 data/events.db-shm
 data/events.db-wal
+data/gcal_sync.json
 
 # =============================================================================
 # Python

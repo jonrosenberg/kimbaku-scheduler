@@ -34,7 +34,7 @@ Extract event information from the provided text and return ONLY a valid JSON ob
   "timezone": "IANA timezone string (e.g. Europe/London) or null",
   "venue": "string or null",
   "url": "string or null",
-  "description": "string or null",
+  "description": "string — preserve as much detail as possible from the source: what the event covers, who it is for, skill level requirements, what participants will learn or experience, any special notes about format or structure. Do not summarize — copy or closely paraphrase the full original description.",
   "cost_estimate": "string (e.g. '€200', 'Free', '¥45000') or null",
   "registration_required": true/false,
   "tags": ["array", "of", "strings"],
@@ -60,7 +60,7 @@ def fetch_url(url: str) -> str:
     soup = BeautifulSoup(resp.text, "html.parser")
     for tag in soup(["script", "style", "nav", "footer", "header"]):
         tag.decompose()
-    return soup.get_text(separator="\n", strip=True)[:8000]
+    return soup.get_text(separator="\n", strip=True)[:12000]
 
 
 def extract_event(text: str) -> dict:
